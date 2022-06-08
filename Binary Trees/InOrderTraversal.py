@@ -14,18 +14,25 @@ class TreeNode:
 
 ######## Iterative Solution ########
 class Solution:
-    def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:     
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        inorder, stack = [], []
+        while True:
+            while root:
+                stack.append(root)
+                root = root.left
+            if not stack:
+                return inorder
+            node = stack.pop()
+            inorder.append(node.val)
+            root = node.right
+
         
-        
-        
-######## Recursive Solution ########
+######## Recursive Version ########
 '''
-class Solution:
-    def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        preorder = []
+        inorder = []
         if root:
-            preorder+=self.preorderTraversal(root.val)
-            preorder+=self.preorderTraversal(root.right)
-            preorder+=self.preorderTraversal(root.left)
-        return preorder
+            inorder+=self.inorderTraversal(root.left)
+            inorder.append(root.val)
+            inorder+=self.inorderTraversal(root.right)
+        return inorder
 '''
