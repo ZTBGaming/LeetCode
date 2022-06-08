@@ -2,7 +2,7 @@
 Binary Tree Inorder Traversal
 
 PROMPT: 
-        Given the root of a binary tree, return the preorder traversal of its nodes' values.
+        Given the root of a binary tree, return the inorder traversal of its nodes' values.
 '''
 # GIVEN BY LEETCODE
 # Definition for a binary tree node.
