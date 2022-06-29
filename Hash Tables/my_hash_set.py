@@ -5,6 +5,9 @@
 class MyHashSet:
 
     def __init__(self):
+        """
+            Initializes the object with an empty set.
+        """
         self.set = set()
 
     def add(self, key: int) -> None:
