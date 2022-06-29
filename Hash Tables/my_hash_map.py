@@ -2,33 +2,42 @@
     PROMPT: Design a HashMap without using any built-in hash table libraries.
 """
 
-class MyHashSet:
+class MyHashMap:
 
     def __init__(self):
-        self.set = set()
+        """
+            Initializes the object with an empty map.
+        """
+        self.map = {}
 
-    def add(self, key: int) -> None:
+    def put(self, key: int, value: int) -> None:
         """
-            Inserts the value key into the HashSet.
+            Inserts a (key, value) pair into the HashMap.
+            If the key already exists in the map, update the corresponding value.
         """
-        self.set.add(key)
+        self.map[key] = value
+
+    def get(self, key: int) -> int:
+        """
+            Returns the value to which the specified key is mapped,
+            or -1 if this map contains no mapping for the key.
+        """
+        if key in self.map:
+            return self.map[key]
+        else:
+            return -1
 
     def remove(self, key: int) -> None:
         """
-            Removes the value key in the HashSet. If key does not exist in the HashSet, do nothing.
+            Removes the key and its corresponding value
+            if the map contains the mapping for the key.
         """
-        if key in self.set:
-            self.set.remove(key)
-
-    def contains(self, key: int) -> bool:
-        """
-            Returns whether the value key exists in the HashSet or not.
-        """
-        return key in self.set
+        if key in self.map:
+            self.map.pop(key)
 
 
-# Your MyHashSet object will be instantiated and called as such:
-# obj = MyHashSet()
-# obj.add(key)
+# Your MyHashMap object will be instantiated and called as such:
+# obj = MyHashMap()
+# obj.put(key,value)
+# param_2 = obj.get(key)
 # obj.remove(key)
-# param_3 = obj.contains(key)
