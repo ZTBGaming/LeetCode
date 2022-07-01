@@ -26,7 +26,7 @@ class Solution:
                 if y == 0:
                     sudoku[x] = set()
                 # Initialize 3 counters for boxes -> 
-                # [x: 0-3 & y: 0-3], [x: 2-5 & y: 0-3], [x: 6-8 & y: 0-3], etc...
+                # [x: 0-2 & y: 0-2], [x: 3-5 & y: 0-2], [x: 6-8 & y: 0-2], etc...
                 if (x == 0) and (y % 3 == 0):
                     sudoku["first"] = set()
                     sudoku["second"] = set()
