@@ -26,7 +26,7 @@ class Solution:
         
         # When no children exist, we know this is a leaf
         if not root.left and not root.right:
-            return 0 == targetSum
+            return (0 == targetSum)
        
         # Since there is more to this Tree, dive further while subtracting the node.val from targetSum
         else:

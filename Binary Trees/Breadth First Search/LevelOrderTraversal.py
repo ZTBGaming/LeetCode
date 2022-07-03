@@ -19,7 +19,7 @@ from collections import deque
 
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-        # levelorder initializes empty since we may recieve an empty tree
+        # levelorder initializes empty since we may receive an empty tree
         # queue is an actual queue data structure imported from collections 
         levelorder, queue = [], deque([root])
         # Repeats indefinitely until stack is empty, then nextlevel is returned
