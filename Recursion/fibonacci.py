@@ -9,10 +9,12 @@
             Given n, calculate F(n).
 """
 
+storage = {0: 0, 1: 1}
+
 class Solution:
     def fib(self, n: int) -> int:
-        if n == 0:
-            return 0
-        elif n == 1:
-            return 1
-        return self.fib(n-1) + self.fib(n-2)
+        if n in storage:
+            return storage[n]
+        else:
+            storage[n] = self.fib(n-1) + self.fib(n-2)
+        return storage[n]
